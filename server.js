@@ -32,6 +32,7 @@ app.post('/app/roll/', (req, res) => {
     var sides = parseInt(req.body.sides);
     var dice = parseInt(req.body.dice);
     var rolls = parseInt(req.body.rolls);
+    console.log(req.body);
     res.send(roll(sides, dice, rolls));
    
 })
@@ -60,7 +61,7 @@ app.get('/app/roll/:sides/:dice/:rolls/', (req, res) => {
 app.get('*', (req, res) => {
     console.error('error')
     res.status(404).send('404 NOT FOUND');
-    res.end
+    
 })
 
 app.listen(port, () => {
