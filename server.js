@@ -23,7 +23,7 @@ app.get('/app/', (req, res) => {
 })
 
 app.get('/app/roll/', (req, res) => {
-    res.status(200).send(roll(6,2,1));
+    res.send(roll(6,2,1));
    
 })
 
@@ -31,20 +31,20 @@ app.post('/app/roll/', (req, res) => {
     var sides = parseInt(req.body.sides);
     var dice = parseInt(req.body.dice);
     var rolls = parseInt(req.body.rolls);
-    res.status(200).send(roll(sides, dice, rolls));
+    res.send(roll(sides, dice, rolls));
    
 })
 
 app.get('/app/roll/:sides/', (req, res) => {
     var sides = parseInt(req.params.sides);
-    res.status(200).send(roll(sides,2,1));
+    res.send(roll(sides,2,1));
     res.end;
 })
 
 app.get('/app/roll/:sides/:dice/', (req, res) => {
     var sides = parseInt(req.params.sides);
     var dice = parseInt(req.params.dice);
-    res.status(200).send(roll(sides, dice, 1));
+    res.send(roll(sides, dice, 1));
     res.end
 })
 
@@ -52,7 +52,7 @@ app.get('/app/roll/:sides/:dice/:rolls/', (req, res) => {
     var sides = parseInt(req.params.sides);
     var dice = parseInt(req.params.dice);
     var rolls = parseInt(req.params.rolls);
-    res.status(200).send(roll(sides,dice,rolls));
+    res.send(roll(sides,dice,rolls));
     res.end
 })
 
