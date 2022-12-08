@@ -18,7 +18,7 @@ app.use(express.urlencoded({extended: true}));
 
 
 app.get('/app/', (req, res) => {
-    res.status(200).send('200 OK');
+    res.send('200 OK');
    
 })
 
@@ -58,7 +58,7 @@ app.get('/app/roll/:sides/:dice/:rolls/', (req, res) => {
 
 app.get('*', (req, res) => {
     console.error('error')
-    res.status(200).status(404).send('404 NOT FOUND');
+    res.status(404).send('404 NOT FOUND');
     res.end
 })
 
